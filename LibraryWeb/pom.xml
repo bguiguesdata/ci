@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  
+  <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>fr.orsys.mediatheque</groupId>
   <artifactId>LibraryWeb</artifactId>
@@ -14,7 +16,38 @@
         <maven.compiler>3.8.0</maven.compiler>
 	</properties>
 
+
+ <distributionManagement>
+
+		<repository>
+			<id>nexus-repo</id>
+			<name>My releases</name>
+			<url>http://192.168.80.9:32771/repository/maven-releases/</url>
+
+		</repository>
+
+		<!-- Publish snapshots here -->
+		<snapshotRepository>
+			<id>nexus-repo</id>
+			<name>My snapshots</name>
+			<url>http://192.168.80.9:32771/repository/maven-snapshots/</url>
+
+		</snapshotRepository>
+
+		<site>
+			<id>nexus-repo</id>
+			<url>dav:http://192.168.80.9:32771/repository/sites/</url>
+		</site>
+
+
+	</distributionManagement>
+
+
+
   <build>
+  
+  
+ 
   
   <pluginManagement>
   	<plugins>
